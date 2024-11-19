@@ -6,10 +6,6 @@ import { CreateOrganization } from "@clerk/nextjs";
 import {
     Dialog,
     DialogContent,
-    DialogFooter,
-    DialogHeader,
-    DialogHeaderTitle,
-    DialogFooterButton,
 } from "@/components/ui/dialog";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Hint } from "./hint";
