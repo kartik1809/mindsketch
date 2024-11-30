@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+"use client";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/sonner";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import "./globals.css";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,10 +16,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "MindSketch",
-  description: "Realtime collaborative whiteboard",
-};
 
 export default function RootLayout({
   children,
@@ -33,6 +30,7 @@ export default function RootLayout({
         <ConvexClientProvider>
           {children}
           <Toaster />
+          <ModalProvider/>
         </ConvexClientProvider>
       </body>
     </html>

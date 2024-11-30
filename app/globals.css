@@ -79,3 +79,7 @@ html,body,:root{
 .cl-footer , .cl-internal-to9o31,.cl-organizationSwitcherPopoverFooter,.cl-userButtonPopoverFooter {
   display: none;
 }
+
+::-webkit-scrollbar{
+  width: 5px;
+}

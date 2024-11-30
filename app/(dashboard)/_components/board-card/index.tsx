@@ -6,6 +6,8 @@ import {formatDistanceToNow} from "date-fns";
 import { useAuth } from "@clerk/nextjs";
 import { Footer } from "./footer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Actions } from "@/components/actions";
+import { MoreHorizontal } from "lucide-react";
 
 interface BoardCardProps {
     id: string;
@@ -35,6 +37,17 @@ export const BoardCard = ({ id,title,authorName,authorId,createdAt,imageUrl,orgI
                         className="object-fit"
                     />
                     <Overlay/>
+                    <Actions 
+                        id={id}
+                        title={title}
+                        side="right"    
+                    >
+                        <button className="absolute top-1 right-1 group-hover:opacity-100  opacity-0 px-3 transition-opacity py-2 outline-none">
+                           <MoreHorizontal
+                            className="text-white hover:opacity-100  opacity-75 transition-opacity"
+                           />
+                        </button>
+                    </Actions>
                 </div>
                 <Footer
                     isFavorite={isFavorite}
