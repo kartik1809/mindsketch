@@ -83,3 +83,11 @@ html,body,:root{
 ::-webkit-scrollbar{
   width: 5px;
 }
+
+.cl-navbar > div:nth-child(3) {
+  display: none;
+}
+
+.cl-navbar > div:nth-child(1) {
+  background: none;
+}
