@@ -11,7 +11,7 @@ import { Toolbar } from "./toolbar";
 import { useCanRedo, useCanUndo, useHistory, useSelf,useMutation } from "@liveblocks/react/suspense";
 import { CursorsPresence } from "./cursors-presence";
 import { ColorToCSS, connectionIdToColor, findIntersectingLayersWithRectangle, penPointsToPathLayer, pointerEventToCanvasPoint, resizeBounds } from "@/lib/utils";
-import { useOthers, useOthersMapped, useStorage } from "@liveblocks/react";
+import { useOthersMapped, useStorage } from "@liveblocks/react";
 import {nanoid} from "nanoid";
 import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "./layer-preview";
@@ -30,7 +30,6 @@ interface CanvasProps {
 export const Canvas = ({boardId}:CanvasProps) => {
     const layerIds=useStorage((root)=>root.layerIds);
     const pencilDraft=useSelf((me)=>me.presence.pencilDraft);
-    const { name, picture} = useSelf((me) => me.info);
     const [canvasState, setCanvasState] = useState<CanvasState>({
         mode: CanvasMode.None,
     });

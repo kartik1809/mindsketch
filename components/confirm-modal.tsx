@@ -21,10 +21,7 @@ interface ConfirmModalProps {
 }
 
 export const ConfirmModal = ({ children, onConfirm, disabled, header, description }: ConfirmModalProps) => {
-    const handleConfirm = () => {   
-        onConfirm();
-    }
-    
+        
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>

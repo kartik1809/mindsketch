@@ -41,6 +41,10 @@ export const useSelectionBounds = () => {
     const selection = useSelf((me) => me.presence.selection);
   
     return useStorage((root) => {
+      if (!selection) {
+        return null;
+      }
+
       const selectedLayers = selection
         .map((layerId) => root.layers.get(layerId)!)
         .filter(Boolean);

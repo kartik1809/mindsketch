@@ -1,7 +1,7 @@
 "use client";
 
-import {memo, use} from "react";
-import { Mouse, MousePointer2 } from "lucide-react";
+import {memo} from "react";
+import { MousePointer2 } from "lucide-react";
 import { connectionIdToColor } from "@/lib/utils";
 import { useOther } from "@liveblocks/react";
 
@@ -11,7 +11,6 @@ interface CursorProps {
 
 export const Cursor = memo(({ connectionId }: CursorProps) => {
     const info=useOther(connectionId,(user)=>user.info);
-    const color = connectionIdToColor(connectionId);
     const cursor=useOther(connectionId,(user)=>user.presence.cursor);
 
     const name=info?.name || "Teammate";

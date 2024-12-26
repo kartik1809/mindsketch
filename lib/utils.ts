@@ -1,4 +1,4 @@
-import { Camera, Color, LayerType, PathLayer, Point, Side, XYWH } from "@/types/canvas"
+import { Camera, Color, Layer, LayerType, PathLayer, Point, Side, XYWH } from "@/types/canvas"
 import { clsx, type ClassValue } from "clsx"
 import React from "react"
 import { twMerge } from "tailwind-merge"
@@ -59,7 +59,7 @@ export function resizeBounds(bounds:XYWH,corner:Side,point:Point){
 
 export function findIntersectingLayersWithRectangle(
   layerIds:readonly string[],
-  layers: ReedOnlyMap<string,Layer>,
+  layers: ReadonlyMap<string,Layer>,
   a:Point,
   b:Point,
 ){

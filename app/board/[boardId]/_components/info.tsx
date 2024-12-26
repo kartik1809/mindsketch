@@ -12,7 +12,7 @@ import Link from "next/link";
 import { Hint } from "@/components/hint";
 import { useRenameModal } from "@/store/use-rename-modal";
 import { Actions } from "@/components/actions";
-import { icons, Menu } from "lucide-react";
+import {  Menu } from "lucide-react";
 
 
 

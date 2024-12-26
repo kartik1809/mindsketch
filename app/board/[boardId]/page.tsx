@@ -1,13 +1,28 @@
-import { Canvas } from "./_components/canvas"
-import {Room} from "@/components/room"
+"use client";
+
+import { Canvas } from "./_components/canvas";
+import { Room } from "@/components/room";
 import { Loading } from "./_components/loading";
+import { useEffect, useState } from "react";
 
-export default async function BoardPage({ params }: { params: { boardId: string } }) {
-    const { boardId } = params;
+export default function BoardPage({ params }: { params: Promise<{ boardId: string }> }) {
+  const [resolvedParams, setResolvedParams] = useState<{ boardId: string } | null>(null);
 
-    return (
-        <Room roomId={boardId} fallback={<Loading/>}>
-            <Canvas boardId={boardId} />
-        </Room>
-    );
+  useEffect(() => {
+    const resolveParams = async () => {
+      const resolved = await params;
+      setResolvedParams(resolved);
+    };
+    resolveParams();
+  }, [params]);
+
+  if (!resolvedParams) {
+    return <Loading />;
+  }
+
+  return (
+    <Room roomId={resolvedParams.boardId} fallback={<Loading />}>
+      <Canvas boardId={resolvedParams.boardId} />
+    </Room>
+  );
 }
