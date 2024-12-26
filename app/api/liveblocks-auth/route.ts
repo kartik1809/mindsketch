@@ -8,7 +8,7 @@ const convex=new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 
 const liveblocks = new Liveblocks({
-  secret: "sk_dev_4LaGfNb9Fk5cg9AL0bR2KjPkdOmpiFxpJ_-urNmmVPAh4PCwkFeBw3KMv6GywxVX",
+  secret: process.env.LIVEBLOCKS_SECRET!,
 });
 
 
