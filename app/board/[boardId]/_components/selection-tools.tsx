@@ -70,7 +70,7 @@ export const SelectionTools = memo(({ camera, setLastUsedColor }: SelectionTools
     const y = selectionBounds.y + camera.y;
     return (
         <div
-            className="absolute p-3 rounded-xl bg-white shadow-sm border flex select-none"
+            className="absolute top-[60px] ml-2 p-3 rounded-xl bg-white shadow-sm border flex select-none"
             style={{ transform: `translate(calc(${x}px-50%),calc(${y - 16}px-100%))` }}
         >
             <ColorPicker
