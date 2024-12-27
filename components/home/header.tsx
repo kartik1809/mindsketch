@@ -4,7 +4,15 @@ import Link from "next/link";
 import {usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menu-data";
+import { Poppins } from "next/font/google";
 import { RedirectToSignIn } from "@clerk/nextjs";
+import { cn } from "@/lib/utils";
+
+
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["600"],
+});
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -41,7 +49,7 @@ const Header = () => {
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <Link href="/">
+          <Link href="/" className="flex items-end">
             <Image
               src="/logo.png"
               alt="logo"
@@ -56,6 +64,9 @@ const Header = () => {
               height={30}
               className="w-full dark:hidden"
             />
+            <span className={cn("font-semibold text-2xl", font.className)}>
+                        MindSketch
+            </span>
           </Link>
 
           {/* <!-- Hamburger Toggle BTN --> */}
