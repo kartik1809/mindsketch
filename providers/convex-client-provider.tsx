@@ -8,8 +8,10 @@ import {
     ConvexReactClient,
     Unauthenticated
 } from "convex/react"
-import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignInButton} from "@clerk/clerk-react";
 import { Loading } from "@/components/auth/loading";
+import Home from "@/app/home/page";
+
 
 interface ConvexClientProviderProps {
     children: React.ReactNode;
@@ -28,7 +30,7 @@ export const ConvexClientProvider = ({ children }: ConvexClientProviderProps) =>
                     <Loading/>
                 </AuthLoading>
                 <Unauthenticated>
-                    <SignInButton/>
+                    <Home/>
                 </Unauthenticated>
                 <Authenticated>
                     {/* <UserButton/> */}
