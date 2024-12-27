@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import ThemeToggler from "./theme-toggler";
 import menuData from "./menu-data";
 import { RedirectToSignIn } from "@clerk/nextjs";
 
@@ -158,8 +156,6 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <ThemeToggler />
-
             <Link
               href="https://github.com/kartik1809/mindsketch"
               className="text-regular font-medium text-waterloo hover:text-primary"
