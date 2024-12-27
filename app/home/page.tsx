@@ -7,12 +7,14 @@ import Hero from "@/components/home/hero";
 
 const Home = () => {
     return (
-        <div>
-            <Header />
-            <Hero />
-            <Feature/>
-            <Footer/>
-        </div>
+        <>
+            <div>
+                <Header />
+                <Hero />
+                <Feature />
+                <Footer />
+            </div>
+        </>
     );
 };
 
